@@ -159,8 +159,8 @@ def get_columns(csv_column_names):
                  if "STATUS" in n.upper()]
 
     col_occu = [n for n in csv_column_names
-                if ("JOB" in n.upper() and
-                    "TITLE" in n.upper())]
+                if ("SOC" in n.upper() and
+                    "NAME" in n.upper())]
 
     col_state = [n for n in csv_column_names
                  if ("WORK" in n.upper() and

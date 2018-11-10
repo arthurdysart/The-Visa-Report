@@ -51,7 +51,7 @@ python3    [main path]    [import path]    [occupations export path]    [state e
 
 TVR requires CPython 3.6 and the `csv`, `os`, and `sys` modules. The script can be executed via Bash shell script or CPython command line interface.
 
-TVR consists of four modules located in the `src/` directory. The `src/TheVisaReport.Py` module is the main script that controls data extraction (i.e., import), transformation (analysis and sorting), and external loading (export). The `src/TheVisaReportExtract.Py` module contains all functions related to validation of IO paths in the local file system, and extraction of H-1B visa data from the source file. The `src/TheVisaReportTransform.Py` module contains all functions related to sorting extracted data (by decreasing order of number of certified visas, then alphanumeric order of attribute name) and formatting data for external export.
+TVR consists of four modules located in the `src/` directory. The `src/TheVisaReport.Py` module is the main script that controls data extraction (i.e., import), transformation (analysis and sorting), and external loading (export). The `src/TheVisaReportExtract.Py` module contains all functions related to validation of IO paths in the local file system, and extraction of H-1B visa data from the source file. The `src/TheVisaReportTransform.Py` module contains all functions related to sorting extracted data (by decreasing order of number of certified visas, then alphanumeric order of attribute name) and formatting data for external export. The `src/TheVisaReportLoad.Py` module contains all functions related to exporting transformed data to specified output paths.
 
 
 # Credits

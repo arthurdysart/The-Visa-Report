@@ -28,11 +28,11 @@ def transform(attribute, n_cert, top=None):
     :rtype: list[str]
     """
     # Verify top number is correct type and greater than 0
-    if (not isinstance(top, (int, type(None))) or
-        top < 1 or
-        top > len(attribute)):
-        raise IndexError("Specified top number is out of bounds. See "
-                         "instructions in \"Read Me\" then run again.")
+    if isinstance(top, int):
+        if (top < 1 or
+            top > len(attribute)):
+            raise IndexError("Specified top number is out of bounds. See "
+                             "instructions in \"Read Me\" then run again.")
 
     attrib_list = sorted(attribute.items(),
                          key=sort_order)[:top]
@@ -56,7 +56,7 @@ def sort_order(item):
 
 def cast(name, count, n_cert):
     """
-    Returns formatted string with relevant values
+    Returns formatted string with relevant values.
 
     :param str name: attribute name
     :param int count: attribute count
@@ -64,6 +64,7 @@ def cast(name, count, n_cert):
     :return: formatting string for attribute entry
     :rtype: str
     """
+    # Calculates percentage of certified visas for specified attribute
     percent = round(count * 100/ n_cert, 1)
     return ";".join([name,
                      str(count),

@@ -15,6 +15,7 @@ title.
 ## REQUIRED MODULES
 import TheVisaReportExtract as vr1
 import TheVisaReportTransform as vr2
+import TheVisaReportLoad as vr3
 import sys
 
 
@@ -29,8 +30,11 @@ if __name__ == "__main__":
     in_path, occu_path, state_path = vr1.get_args(sys.argv)
     known_occus, known_states, n_cert = vr1.extract(in_path)
 
-    occu_list = vr2.transform(known_occus, n_cert, top=10)
-    state_list = vr2.transform(known_states, n_cert, top=10)
+    occu_list = vr2.transform(known_occus, n_cert, top=None)
+    vr3.load("occupations", occu_list, occu_path)
+
+    state_list = vr2.transform(known_states, n_cert, top=None)
+    vr3.load("states", state_list, state_path)
 
 
 ## END OF FILE
