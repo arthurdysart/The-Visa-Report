@@ -26,7 +26,14 @@ def transform(attribute, n_cert, top=None):
     :param int top: total number of analyzed attribute values to load
     :return: list 
     :rtype: list[str]
+    :raises IndexError: if attributes contains no entries
+    :raises IndexError: if specified top number is out of bounds
     """
+    # Verify attribute contains at least one entry
+    if not attribute:
+        raise IndexError("Extracted data contains no entries. Check "
+                         "contents of input file then run again.")
+
     # Verify top number is correct type and greater than 0
     if isinstance(top, int):
         if (top < 1 or

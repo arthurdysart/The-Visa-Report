@@ -61,7 +61,7 @@ def extract(in_path):
     known_occus = {}
     known_states = {}
 
-    with open(in_path, "r") as data_source:
+    with open(in_path, "r", encoding="UTF-8") as data_source:
         # Creates CSV iterator object to parse input file line-by-line
         read_csv = csv.DictReader(data_source,
                                   quotechar = "\"",
@@ -121,9 +121,9 @@ def update(key, known_attribs):
     occupation counts.
 
     :param list[str] key: all values for row entry
-    :param dict[str : int] known_attribs: hash tables for all unique attributes
+    :param dict[str: int] known_attribs: hash tables for all unique attributes
     :return: dictionary with updated counts
-    :rtype: dict[str : int]
+    :rtype: dict[str: int]
     """
     if key != "":
         if key in known_attribs:

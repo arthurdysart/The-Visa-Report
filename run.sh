@@ -6,4 +6,4 @@
 # TEMPLATE
 # python3 <path-to-source-script> <path-to-input-csv> <path-to-output-1> <path-to-output-2>
 
-python ./src/TheVisaReport.py ./input/h1b_input.txt ./output/top_10_occupations.txt ./output/top_10_states.txt
+python ./src/TheVisaReport.py ./input/h1b_input.csv ./output/top_10_occupations.txt ./output/top_10_states.txt
