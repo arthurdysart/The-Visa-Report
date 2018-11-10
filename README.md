@@ -1,16 +1,16 @@
 The Visa Report: ETL processing of historal H-1B data
 
-Navigation
+# Navigation
 1. [QUICK START](README.md#Quick-start-guide)
 2. [REQUIREMENTS](README.md#Requirements)
 3. [CREDITS](README.md#Credits)
 
-The Visa Report (TVR) performs extract-transform-load (ETL) tasks to analyze H-1B Visa data. TVR is compatible with is comma-separated value data from the United States Department of Labor Office of Foreign Labor Certification. For each occupation and workplace state, TVR reports ***total number of certified visas*** and ***percentage of certified visas***. Analysis reports are organized by occupation or workplace state in sequence of ***decreasing total number of certified visas*** and ***alphanumeric occupation or workplace state***.
+The Visa Report (TVR) performs extract-transform-load (ETL) tasks to analyze H-1B visa data. TVR is compatible with comma-separated value data from the United States Department of Labor Office of Foreign Labor Certification. For each occupation and workplace state, TVR reports ***total number of certified visas*** and ***percentage of certified visas***. Analysis reports are organized by occupation or workplace state in sequence of ***decreasing total number of certified visas*** and ***alphanumeric occupation or workplace state***.
 
 
 # Quick start guide
 
-TVR is built on Python 3.6 and requires the `csv`, `os`, and `sys` modules.
+TVR is built on CPython 3.6 and requires the `csv`, `os`, and `sys` modules.
 
 ## Installation and setup
 Download Github repository. Install [CPython](https://www.python.org/downloads) version 3.6 and [Git Bash](https://git-scm.com/downloads); ensure both are available on the operating system path. Put the input data file in the `input/` directory. Note TVR only analyzes comma-delimited plaintext data which follow the [formatting guidelines of the Office of Foreign Labor Certification](https://www.foreignlaborcert.doleta.gov/performancedata.cfm#dis).
@@ -49,9 +49,9 @@ python3    [main path]    [import path]    [occupations export path]    [state e
 
 # Requirements
 
-TVR requires CPython 3.6 and the `cv`, `os`, and `sys` modules. The script can be executed via Bash shell script or CPython command line interface.
+TVR requires CPython 3.6 and the `csv`, `os`, and `sys` modules. The script can be executed via Bash shell script or CPython command line interface.
 
-TVR consists of four modules located in the `src/` directory. The `src/TheVisaReport.Py` module is the main script that controls data extraction (i.e., import), transformation (analysis and sorting), and external loading (export). The `src/TheVisaReportExtract.Py` module contains all functions related to validation of import and export paths in the local file system.
+TVR consists of four modules located in the `src/` directory. The `src/TheVisaReport.Py` module is the main script that controls data extraction (i.e., import), transformation (analysis and sorting), and external loading (export). The `src/TheVisaReportExtract.Py` module contains all functions related to validation of IO paths in the local file system, and extraction of H-1B visa data from the source file. The `src/TheVisaReportTransform.Py` module contains all functions related to sorting extracted data (by decreasing order of number of certified visas, then alphanumeric order of attribute name) and formatting data for external export.
 
 
 # Credits
